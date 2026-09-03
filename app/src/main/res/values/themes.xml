@@ -1,0 +1,15 @@
+<resources>
+    <style name="Theme.Exegete" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:navigationBarColor">@color/paper</item>
+        <item name="android:statusBarColor">@color/paper</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="colorPrimary">@color/ink</item>
+        <item name="colorOnPrimary">@color/paper</item>
+        <item name="colorSurface">@color/paper</item>
+        <item name="colorOnSurface">@color/ink</item>
+    </style>
+</resources>

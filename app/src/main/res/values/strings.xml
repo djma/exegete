@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Exegete</string>
+    <string name="open_epub">Open EPUB</string>
+    <string name="ask_book">Ask the book</string>
+    <string name="ask_hint">Ask about what you have read…</string>
+    <string name="send">Send</string>
+    <string name="clear">Clear</string>
+    <string name="clear_chat_description">Clear this chat</string>
+    <string name="define">Define</string>
+    <string name="looking_up_word">Looking up definition…</string>
+    <string name="select_one_word">Select one word to define.</string>
+    <string name="dictionary_unavailable">No offline definition was found for this word.</string>
+    <string name="ask_exy">Ask Exy</string>
+    <string name="chat_context_ends_here">CONTEXT ENDS HERE</string>
+    <string name="chat_context_unavailable_title">Could not read this page</string>
+    <string name="chat_context_unavailable">Return to a page with text, then open Exy again.</string>
+    <string name="exy_welcome">I can discuss the book through the text shown above. Check that it ends where you expect before you ask.</string>
+    <string name="close">Close</string>
+    <string name="privacy_summary">Your EPUB file stays on this device. Questions send relevant text through the page where you open chat to OpenRouter. Dictionary lookups stay on this device.</string>
+    <string name="remove_key">Remove key</string>
+</resources>

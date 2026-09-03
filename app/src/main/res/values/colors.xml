@@ -1,0 +1,7 @@
+<resources>
+    <color name="paper">#FFFFFF</color>
+    <color name="paper_dim">#FFFFFF</color>
+    <color name="ink">#000000</color>
+    <color name="ink_muted">#3D3D3D</color>
+    <color name="line">#000000</color>
+</resources>

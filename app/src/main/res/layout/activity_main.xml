@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/paper">
+
+    <LinearLayout
+        android:id="@+id/library_screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="32dp">
+
+        <ImageView
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_exegete" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="serif"
+            android:text="Exegete"
+            android:textColor="@color/ink"
+            android:textSize="38sp" />
+
+        <TextView
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:lineSpacingMultiplier="1.2"
+            android:text="Read with context. Ask questions without reading ahead."
+            android:textColor="@color/ink_muted"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/continue_button"
+            android:layout_width="220dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/button_outline"
+            android:backgroundTint="@null"
+            android:clickable="true"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="Continue reading"
+            android:textAllCaps="false"
+            android:textColor="@color/ink"
+            android:textSize="16sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/last_book_text"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="2"
+            android:textColor="@color/ink_muted"
+            android:textSize="12sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/open_book_button"
+            android:layout_width="220dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/button_outline"
+            android:backgroundTint="@null"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="@string/open_epub"
+            android:textAllCaps="false"
+            android:textColor="@color/ink"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/api_key_button"
+            android:layout_width="220dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/button_outline"
+            android:backgroundTint="@null"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="Set OpenRouter key"
+            android:textAllCaps="false"
+            android:textColor="@color/ink"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/model_status"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="Free model · key not set"
+            android:textColor="@color/ink_muted"
+            android:textSize="11sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="@string/privacy_summary"
+            android:textColor="@color/ink_muted"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/reader_screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <dev.margin.reader.InstantSwipeFrameLayout
+            android:id="@+id/navigator_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <FrameLayout
+            android:id="@+id/top_bar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_gravity="top"
+            android:background="@color/paper"
+            android:paddingHorizontal="8dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingHorizontal="58dp">
+
+                <TextView
+                    android:id="@+id/book_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="Book"
+                    android:textColor="@color/ink"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/book_author"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:textColor="@color/ink_muted"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/back_button"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_gravity="start|center_vertical"
+                android:background="@drawable/button_outline"
+                android:backgroundTint="@null"
+                android:clickable="true"
+                android:contentDescription="Back to library"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="←"
+                android:textColor="@color/ink"
+                android:textSize="24sp" />
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/bottom_bar"
+            android:layout_width="match_parent"
+            android:layout_height="104dp"
+            android:layout_gravity="bottom"
+            android:background="@color/paper"
+            android:orientation="vertical"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="4dp"
+            android:visibility="gone">
+
+            <SeekBar
+                android:id="@+id/page_scrubber"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:max="1000"
+                android:progress="0"
+                android:progressTint="@color/ink"
+                android:thumbTint="@color/ink" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/progress_text"
+                    android:layout_width="42dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="0%"
+                    android:textColor="@color/ink_muted"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/font_button"
+                    android:layout_width="0dp"
+                    android:layout_height="42dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_outline"
+                    android:clickable="true"
+                    android:contentDescription="Reading appearance"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:text="Aa"
+                    android:textColor="@color/ink"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/ask_button"
+                    android:layout_width="0dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_outline"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:text="@string/ask_exy"
+                    android:textColor="@color/ink"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/bookmark_button"
+                    android:layout_width="0dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_outline"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:text="Marks"
+                    android:textColor="@color/ink"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/chapters_button"
+                    android:layout_width="0dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1.15"
+                    android:background="@drawable/button_outline"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:text="Chapters"
+                    android:textColor="@color/ink"
+                    android:textSize="10sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/loading_panel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/paper"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="32dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/loading_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Opening book…"
+                android:textColor="@color/ink"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/chat_panel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/paper_dim"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="@color/paper"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp">
+
+            <TextView
+                android:id="@+id/close_chat_button"
+                android:layout_width="92dp"
+                android:layout_height="44dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/button_outline"
+                android:backgroundTint="@null"
+                android:clickable="true"
+                android:contentDescription="Back to book"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="← Book"
+                android:textAllCaps="false"
+                android:textColor="@color/ink"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BOOK CONVERSATION"
+                    android:textColor="@color/ink_muted"
+                    android:textSize="9sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:text="Chat without spoilers"
+                    android:textColor="@color/ink"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/clear_chat_button"
+                android:layout_width="64dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="12dp"
+                android:background="@drawable/button_outline"
+                android:backgroundTint="@null"
+                android:clickable="true"
+                android:contentDescription="@string/clear_chat_description"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="@string/clear"
+                android:textAllCaps="false"
+                android:textColor="@color/ink"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/panel_border"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/chat_context_ends_here"
+                android:textColor="@color/ink_muted"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/chat_context_preview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="serif"
+                android:textColor="@color/ink"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <ScrollView
+            android:id="@+id/message_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:id="@+id/messages"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp" />
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:background="@color/paper"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <EditText
+                android:id="@+id/question_input"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="@drawable/panel_border"
+                android:hint="@string/ask_hint"
+                android:imeOptions="actionSend"
+                android:inputType="textCapSentences|textMultiLine"
+                android:maxLines="3"
+                android:paddingHorizontal="12dp"
+                android:textColor="@color/ink"
+                android:textColorHint="@color/ink_muted"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/send_button"
+                android:layout_width="58dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/button_outline"
+                android:backgroundTint="@null"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="@string/send"
+                android:textAllCaps="false"
+                android:textColor="@color/ink" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>
